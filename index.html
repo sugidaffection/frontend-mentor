@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frontend Mentor Challenges</title>
+
+  <script defer src="/__/firebase/8.2.1/firebase-app.js"></script>
+  <script defer src="/__/firebase/8.2.1/firebase-firestore.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+
+  <style>
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      background: #eaeeef;
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    .container {
+      padding: 2em;
+    }
+
+    .card-list {
+      align-items: flex-start;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1em;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1em;
+    }
+
+    .card__title {
+      color: #2a2e2f;
+    }
+
+    .card__img {
+      width: 100%;
+    }
+
+    .card__actions {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .card__btn {
+      border-radius: 8px;
+      border: 0;
+      color: #00458B;
+      cursor: pointer;
+      font-size: 18px;
+      padding: .45em 1em;
+      text-decoration: none;
+    }
+
+    .card__btn:hover {
+      color: #035cb4;
+      text-decoration: underline;
+    }
+
+    .card__btn__primary {
+      background: #00458B;
+      color: #fff;
+    }
+
+    .card__btn__primary:hover {
+      background: #035cb4;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="card-list">
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cardList = document.querySelector('.card-list');
+      firebase.firestore().collection('/challenges').get().then((snapshot) => {
+        snapshot.forEach(doc => {
+          const data = doc.data();
+
+          const element = `<div class="card">
+                          <img class="card__img" src="${data.cover}">
+                          <h3 class="card__title">${data.name}</h3>
+                          <div class="card__actions">
+                            <a class="card__btn"
+                              href="${data.github}">Github</a>
+                            <a class="card__btn card__btn__primary" href="${data.preview}">Preview</a>
+                          </div>
+                        </div>`;
+          cardList.insertAdjacentHTML("afterbegin", element);
+        })
+      });
+
+    });
+  </script>
+</body>
+
+</html>
