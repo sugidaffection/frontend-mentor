@@ -28,6 +28,7 @@
 }
 
 .card {
+  background-color: #fff;
   border-radius: 8px;
   -webkit-box-shadow: 0 4px 12px 4px rgba(91, 164, 164, 0.24);
           box-shadow: 0 4px 12px 4px rgba(91, 164, 164, 0.24);
