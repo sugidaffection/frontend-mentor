@@ -203,7 +203,7 @@
     .header-bar {
         background-image: url('../../images/bg-header-desktop.svg');
     }
-    .row {
+    .row#card_list {
         .card {
             align-items: center;
             grid-template-columns: auto 1fr 1fr;

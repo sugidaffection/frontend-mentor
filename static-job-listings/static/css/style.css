@@ -223,7 +223,7 @@
   .header-bar {
     background-image: url("../../images/bg-header-desktop.svg");
   }
-  .row .card {
+  .row#card_list .card {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -234,7 +234,7 @@
     -webkit-column-gap: 1.6em;
             column-gap: 1.6em;
   }
-  .row .card__logo {
+  .row#card_list .card__logo {
     -ms-grid-column: 1;
     grid-column: 1;
     grid-row: span 3;
@@ -242,19 +242,19 @@
     position: unset;
     width: 5.93em;
   }
-  .row .card__col {
+  .row#card_list .card__col {
     margin-top: 0;
   }
-  .row .card__row {
+  .row#card_list .card__row {
     -ms-grid-column: 2;
     grid-column: 2;
   }
-  .row .card__position {
+  .row#card_list .card__position {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  .row .card .tag {
+  .row#card_list .card .tag {
     border: 0;
     margin: 0;
     padding: 0;
@@ -264,7 +264,7 @@
     grid-column: 3;
     justify-self: flex-end;
   }
-  .row .card .tag__item:hover {
+  .row#card_list .card .tag__item:hover {
     background-color: #5ba4a4;
     color: #effafa;
   }
