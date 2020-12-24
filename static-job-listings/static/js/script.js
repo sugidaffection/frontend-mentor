@@ -140,7 +140,10 @@ class Item {
         row1.innerHTML = `<div class="card__col card__company">${this.company}</div>`
 
         if (this.new) { row1.innerHTML += `<div class="card__col badge badge-primary">New!</div>` }
-        if (this.featured) { row1.innerHTML += `<div class="card__col badge badge-secondary">Featured!</div>` }
+        if (this.featured) {
+            row1.innerHTML += `<div class="card__col badge badge-secondary">Featured!</div>`;
+            card.classList.add('card-active')
+        }
 
         const row2 = document.createElement('div');
         row2.className = 'card__row';

@@ -204,7 +204,12 @@
     .header-bar {
         background-image: url('../../images/bg-header-desktop.svg');
     }
+
+
+
     .row#card_list {
+        justify-self: center;
+        width: 80%;
         .card {
             align-items: center;
             grid-template-columns: auto 1fr 1fr;
