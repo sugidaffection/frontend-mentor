@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+@import '_base';
+@import '_components';
+
+html, body { height: 100%; }
+
+body {
+    align-items: flex-start;
+    background-color: $bg-color;
+    margin: 0;
+    font-size: 15px;
+    font-family: 'Spartan', sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
